@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fourth page</title>
+</head>
+<body>
+    <table style="width: 100%;">
+        <tr>
+            <td><a href="index.html"> Home </a></td>
+            <td><a href="page1.html"> page-1 </a></td>
+            <td><a href="page2.html"> page-2 </a></td>
+            <td><a href="page3.html"> page-3 </a></td>
+            <td><a href="page4.html"> page-4 </a></td>
+        </tr>
+    </table>
+    <br>
+    <img src="main_image.png" alt="main_image" width="100%">
+    <hr>
+    <h1>Common flaws and weaknesses</h1>
+    <big>
+        <p>
+            Cryptography relies on puzzles. A puzzle that can not be solved without more information than the cryptanalyst has or can feasibly acquire is an unsolvable puzzle for the attacker. If the puzzle can be understood in a way that circumvents the secret information the cryptanalyst doesn't have then the puzzle is breakable. Obviously cryptography relies on an implicit form of security through obscurity where there currently exists no likely ways to understand the puzzle that will break it. The increasing complexity and subtlety of the mathematical puzzles used in cryptography creates a situation where neither cryptographers or cryptanalysts can be sure of all facets of the puzzle and security.
+            <br>
+            Like any puzzle, cryptography algorithms are based on assumptions - if these assumptions are flawed then the underlying puzzle may be flawed.
+            <br>
+            Secret knowledge assumption - Certain secret knowledge is not available to unauthorised people. Attacks such as packet sniffing, keylogging and meet in the middle attacks try to breach this assumption.
+            <br>
+            Secret knowledge masks plaintext - The secret knowledge is applied to the plaintext so that the nature of the message is no longer obvious. In general the secret knowledge hides the message in way so that the secret knowledge is required in order rediscover the message. Attacks such as chosen plaintext, brute force and frequency analysis try to breach this assumption
+            <br><br>
+            As with all security-related systems, it is important to identify potential weaknesses. Aside from poor choice of an asymmetric key algorithm (there are few which are widely regarded as satisfactory) or too short a key length, the chief security risk is that the private key of a pair becomes known. All security of messages, authentication, etc., will then be lost.
+            <br>
+            <b>Algorithms</b>
+            All public key schemes are in theory susceptible to a "brute-force key search attack".[4] However, such an attack is impractical if the amount of computation needed to succeed – termed the "work factor" by Claude Shannon – is out of reach of all potential attackers. In many cases, the work factor can be increased by simply choosing a longer key. But other algorithms may inherently have much lower work factors, making resistance to a brute-force attack (e.g., from longer keys) irrelevant. Some special and specific algorithms have been developed to aid in attacking some public key encryption algorithms – both RSA and ElGamal encryption have known attacks that are much faster than the brute-force approach.[5] None of these are sufficiently improved to be actually practical, however.
+            <br><br>
+            Major weaknesses have been found for several formerly promising asymmetric key algorithms. The "knapsack packing" algorithm was found to be insecure after the development of a new attack.[6] As with all cryptographic functions, public-key implementations may be vulnerable to side-channel attacks that exploit information leakage to simplify the search for a secret key. These are often independent of the algorithm being used. Research is underway to both discover, and to protect against, new attacks.
+            <br><br>
+            Alteration of public keys
+            Another potential security vulnerability in using asymmetric keys is the possibility of a "man-in-the-middle" attack, in which the communication of public keys is intercepted by a third party (the "man in the middle") and then modified to provide different public keys instead. Encrypted messages and responses must, in all instances, be intercepted, decrypted, and re-encrypted by the attacker using the correct public keys for the different communication segments so as to avoid suspicion.
+            <br>
+            A communication is said to be insecure where data is transmitted in a manner that allows for interception (also called "sniffing"). These terms refer to reading the sender's private data in its entirety. A communication is particularly unsafe when interceptions can't be prevented or monitored by the sender.[7]
+            <br>
+            A man-in-the-middle attack can be difficult to implement due to the complexities of modern security protocols. However, the task becomes simpler when a sender is using insecure media such as public networks, the Internet, or wireless communication. In these cases an attacker can compromise the communications infrastructure rather than the data itself. A hypothetical malicious staff member at an Internet Service Provider (ISP) might find a man-in-the-middle attack relatively straightforward. Capturing the public key would only require searching for the key as it gets sent through the ISP's communications hardware; in properly implemented asymmetric key schemes, this is not a significant risk.
+            <br><br><br>
+            In some advanced man-in-the-middle attacks, one side of the communication will see the original data while the other will receive a malicious variant. Asymmetric man-in-the-middle attacks can prevent users from realizing their connection is compromised. This remains so even when one user's data is known to be compromised because the data appears fine to the other user. This can lead to confusing disagreements between users such as "it must be on your end!" when neither user is at fault. Hence, man-in-the-middle attacks are only fully preventable when the communications infrastructure is physically controlled by one or both parties; such as via a wired route inside the sender's own building. In summation, public keys are easier to alter when the communications hardware used by a sender is controlled by an attacker.[8][9][10]
+            <br><br>
+            Public key infrastructure
+            One approach to prevent such attacks involves the use of a public key infrastructure (PKI); a set of roles, policies, and procedures needed to create, manage, distribute, use, store and revoke digital certificates and manage public-key encryption. However, this has potential weaknesses.
+            <br>
+            <u>For example,</u> the certificate authority issuing the certificate must be trusted by all participating parties to have properly checked the identity of the key-holder, to have ensured the correctness of the public key when it issues a certificate, to be secure from computer piracy, and to have made arrangements with all participants to check all their certificates before protected communications can begin. Web browsers, for instance, are supplied with a long list of "self-signed identity certificates" from PKI providers – these are used to check the bona fides of the certificate authority and then, in a second step, the certificates of potential communicators. An attacker who could subvert one of those certificate authorities into issuing a certificate for a bogus public key could then mount a "man-in-the-middle" attack as easily as if the certificate scheme were not used at all. In an alternative scenario rarely discussed,[citation needed] an attacker who penetrates an authority's servers and obtains its store of certificates and keys (public and private) would be able to spoof, masquerade, decrypt, and forge transactions without limit.
+            <br><br>
+            Despite its theoretical and potential problems, this approach is widely used. Examples include TLS and its predecessor SSL, which are commonly used to provide security for web browser transactions (for example, to securely send credit card details to an online store).
+            <br>
+            Aside from the resistance to attack of a particular key pair, the security of the certification hierarchy must be considered when deploying public key systems. Some certificate authority – usually a purpose-built program running on a server computer – vouches for the identities assigned to specific private keys by producing a digital certificate. Public key digital certificates are typically valid for several years at a time, so the associated private keys must be held securely over that time. When a private key used for certificate creation higher in the PKI server hierarchy is compromised, or accidentally disclosed, then a "man-in-the-middle attack" is possible, making any subordinate certificate wholly insecure.
+        </p>
+    </big>
+</body>
+</html>
